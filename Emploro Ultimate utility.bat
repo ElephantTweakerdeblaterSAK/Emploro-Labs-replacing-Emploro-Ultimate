@@ -1,4 +1,4 @@
-echo off
+@echo off
 title Emploro Ultimate Utility Prototype
 color 6
 ::Run as Admin
