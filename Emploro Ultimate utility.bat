@@ -1,5 +1,5 @@
 @echo off
-title Emploro Ultimate Utility Pre alpha V0.5
+title Emploro Ultimate Utility Pre alpha V0.6 early 2nd build
 color 6
 ::Run as Admin
 Reg.exe add HKLM /F >nul 2>&1
@@ -22,17 +22,17 @@ echo.     ^^^:^..^.  :.  .. !?J:.    .
 echo.                     :~:        
 echo.
 echo -
-echo 1) clean pc unnecessary files ect
+echo 1) clean pc unnecessary files ect + clean log files
 echo 2) Disable HPET for pc performance boost
-echo 3) Clean log files
+echo 3) ltbeta help for people 
 echo 4) Disable unnecessary services this will not loose functionality
 echo 5) refresh,clean and reset network for lower ping
-echo 6) Run all tweaks/optimizations exept for debloats
-echo 7) Windows debloats (more fps lower delay and ping)
+echo 6) Run all tweaks/optimizations exept for debloats and other privacy
+echo 7) Windows debloats and other privacy  (more fps lower delay and ping)
 echo 8) revert all changes to set back to defalt settings
 echo 9) vist our pages
-
-
+ 
+ 
  
  
 echo -
@@ -46,8 +46,8 @@ if "%op%"=="6" goto op6
 if "%op%"=="7" goto op7
 if "%op%"=="8" goto op8
 if "%op%"=="9" goto op9
-
-
+ 
+ 
  
  
  
@@ -67,7 +67,9 @@ del /s /f /q C:\Windows\Prefetch\*.*
 del /s /f /q C:\Windows\Temp\*.*
  
 del /s /f /q %USERPROFILE%\appdata\local\temp\*.*
-
+cd/
+@echo
+del *.log /a /s /q /f
 pause
 cls
 goto begin
@@ -90,12 +92,50 @@ cls
 goto begin
  
 :op3
-echo welcome to Log files cleaner
-cd/
-@echo
-del *.log /a /s /q /f
+echo welcome to Ltbeta help
 pause
-echo you have cleaned log files
+cls
+echo are you in need of any assistance
+pause
+ 
+echo 1/y/Y/yes/Yes) yes
+echo 2/n/N/no/No) no 
+ 
+ 
+ 
+ 
+ 
+set /p op=Type option:
+if "%op%"=="1" goto op1
+if "%op%"=="2" goto op2
+if "%op%"=="y" goto op1
+if "%op%"=="n" goto op2  
+if "%op%"=="yes" goto op1
+if "%op%"=="no" goto op2
+if "%op%"=="Yes" goto op1
+if "%op%"=="No" goto op2
+if "%op%"=="Y" goto op1
+if "%op%"=="N" goto op2
+ 
+:op1
+echo you chose yes
+pause
+echo this is not completed yet if you need help just call 911
+pause
+cls
+goto begin
+ 
+ 
+ 
+ 
+ 
+ 
+:op2 
+echo you chose no
+pause
+echo then what do you need
+pause
+echo this area is not completed yet
 pause
 cls
 goto begin
@@ -136,7 +176,7 @@ del /s /f /q C:\Windows\Prefetch\*.*
 del /s /f /q C:\Windows\Temp\*.*
  
 del /s /f /q %USERPROFILE%\appdata\local\temp\*.*
-
+ 
 ipconfig /release
 ipconfig /renew
 arp -d *
@@ -159,29 +199,31 @@ bcdedit /set disabledynamictick yes
 @echo Disable synthetic timers
 bcdedit /set useplatformtick yes
 @echo
-@pause
 pause
 echo you have ran all the optimizations please restart pc to insure the optimizations applied fully
 pause
 cls
- 
 goto begin
  
-
+ 
 :op7
 cls
-echo welcome to debloat menu
+echo welcome to debloat menu + other privacy tweaks
+pause
 echo 1) Unistall microsoft edge Chromium
 echo 2) disable windows update (not recomended if you like new feathures and care about security updates)
 echo 3) disable windows search 
-echo 4) go back to other menu
-
+echo 4) disable the geolocation tracking service so apps cant track you
+echo 5) go back to other menu
+ 
 set /p op=Type option:
 if "%op%"=="1" goto op1
 if "%op%"=="2" goto op2
 if "%op%"=="3" goto op3
 if "%op%"=="4" goto op4
-  
+if "%op%"=="5" goto op5
+ 
+ 
 :op1
 CLS=new ActiveXObject("Shell.Application").ShellExecute("\""+WScript.ScriptFullName+"\"","","","runas",1);/*&title Uninstall_Microsoft_Edge (Chromium)&echo.&echo   Requesting Admin Privileges....&echo   Press "Yes" to Run as Admin&NET FILE>NUL 2>&1||(CSCRIPT //B //E:JSCRIPT %0&EXIT /B)
 cls
@@ -237,8 +279,8 @@ pause >nul
 pause
 cls
 goto begin 
-
-
+ 
+ 
 :op2 
 sc start wuauserv
 pause
@@ -248,25 +290,34 @@ sc config wuauserv start= "disabled"
 pause
 cls 
 goto begin
-
-
-
-
+ 
+ 
+ 
+ 
 :op3
 net stop WSearch /y
 sc config WSearch start= "disabled"
 pause
 cls
 goto begin
-
-
-
+ 
+ 
+ 
 :op4
+net stop lfsvc /y
+sc config lfsvc start= "disabled"
+pause
+cls 
+goto begin
+ 
+ 
+:op5
+pause
 cls
 goto begin
-
-
-
+ 
+ 
+ 
  
  
  
@@ -288,6 +339,8 @@ net start WSearch /y
 sc config WSearch= auto
 net start wuauserv /y
 sc config wuauserv start= demand
+net start lfsvc /y 
+sc config lfsvc /y start= demand
 pause
 echo We reverted all the changes we will open a website page to install microsoft edge if you dont need to or dont want to just close out the tab  
 pause
@@ -295,29 +348,45 @@ start "" https://www.microsoft.com/en-us/edge
 pause
 cls
 goto begin
-
-
+ 
+ 
 :op9
 @echo off 
 title our pages
 echo 1) vist our github
 echo 2) vist our emploro website 
-
+echo 3) join our emploro 
+echo 4) vist my fiverr page
+ 
 set /p op=Type option:
 if "%op%"=="1" goto op1
 if "%op%"=="2" goto op2
-  
+if "%op%"=="3" goto op3
+if "%op%"=="4" goto op4
+ 
 :op1
 start "" https://github.com/ElephantTweakerdeblaterSAK/Emploro-ultimate
 cls
 goto begin
-
+ 
 :op2 
 start "" https://emploro.wixsite.com/emploro
 cls 
 goto begin
-
-
+ 
+:op3
+start "" https://www.roblox.com/groups/10037011/The-elephant-developer-squad#!/about
+cls
+goto begin
+ 
+ 
+:op4 
+start "" https://www.fiverr.com/babyshemonpuckp?source=gig_page
+cls 
+goto begin
+ 
+ 
+ 
  
 :exit
 @exit
