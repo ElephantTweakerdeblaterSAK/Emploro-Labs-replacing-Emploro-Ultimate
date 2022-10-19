@@ -1,11 +1,11 @@
 @echo off
-title Emploro Ultimate Utility Pre alpha V0.6 early 2nd build
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
 color 6
 ::Run as Admin
 Reg.exe add HKLM /F >nul 2>&1
 if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b 
 cls
-echo welcome to Emploro Ultimate Utility this utility does not shorten life of pc you will find amazing tweaks and more (:
+echo welcome to Emploro Ultimate Utility this utility does not shorten the life of your pc you will find amazing tweaks and more (:
 pause
 cls
  
@@ -22,15 +22,15 @@ echo.     ^^^:^..^.  :.  .. !?J:.    .
 echo.                     :~:        
 echo.
 echo -
-echo 1) clean pc unnecessary files ect + clean log files
+echo 1) clean pc unnecessary files etc + clean log files
 echo 2) Disable HPET for pc performance boost
 echo 3) ltbeta help for people 
-echo 4) Disable unnecessary services this will not loose functionality
-echo 5) refresh,clean and reset network for lower ping
-echo 6) Run all tweaks/optimizations exept for debloats and other privacy
+echo 4) Disable unnecessary services this will not lose functionality
+echo 5) refresh, clean and reset the network for lower ping
+echo 6) Run all tweaks/optimizations except for debloats and other privacy
 echo 7) Windows debloats and other privacy  (more fps lower delay and ping)
-echo 8) revert all changes to set back to defalt settings
-echo 9) vist our pages
+echo 8) revert all changes to set back to default settings
+echo 9) visit our pages + themes button
  
  
  
@@ -58,7 +58,7 @@ goto begin
 :op1
 echo welcome to pc cleaning option
 pause
-echo we will clean pc unnecessary files ect
+echo we will clean pc unnecessary files etc
  
 del /s /f /q %userprofile%\Recent\*.*
  
@@ -210,11 +210,11 @@ goto begin
 cls
 echo welcome to debloat menu + other privacy tweaks
 pause
-echo 1) Unistall microsoft edge Chromium
-echo 2) disable windows update (not recomended if you like new feathures and care about security updates)
+echo 1) Uninstall Microsoft edge Chromium
+echo 2) disable windows update (not recommended if you like new features and care about security updates)
 echo 3) disable windows search 
-echo 4) disable the geolocation tracking service so apps cant track you
-echo 5) go back to other menu
+echo 4) disable the geolocation tracking service so apps can't track you
+echo 5) go back to other menus
  
 set /p op=Type option:
 if "%op%"=="1" goto op1
@@ -324,7 +324,7 @@ goto begin
 :op8
 echo welcome to reverter
 pause
-echo the revert can be used if this utility caused issues or you want to make it defalts agian to fix issue
+echo the revert can be used if this utility caused issues or you want to make it defaults again to fix the issue
 pause
 bcdedit /set useplatformclock true
  
@@ -342,7 +342,7 @@ sc config wuauserv start= demand
 net start lfsvc /y 
 sc config lfsvc /y start= demand
 pause
-echo We reverted all the changes we will open a website page to install microsoft edge if you dont need to or dont want to just close out the tab  
+echo We reverted all the changes we will open a website page to install Microsoft edge if you don't need to or don't want to just close out the tab  
 pause
 start "" https://www.microsoft.com/en-us/edge
 pause
@@ -352,39 +352,125 @@ goto begin
  
 :op9
 @echo off 
-title our pages
-echo 1) vist our github
-echo 2) vist our emploro website 
-echo 3) join our emploro 
-echo 4) vist my fiverr page
+title our pages+ themes button
+echo 1) visit our GitHub
+echo 2) visit our Emploro website 
+echo 3) join our Emploro Elephant developer squad
+echo 4) visit my Fiverr page
+echo 5) Themes 
+echo 6) go back to home 
  
 set /p op=Type option:
 if "%op%"=="1" goto op1
 if "%op%"=="2" goto op2
 if "%op%"=="3" goto op3
 if "%op%"=="4" goto op4
+if "%op%"=="5" goto op5
+if "%op%"=="6" goto op6
  
 :op1
 start "" https://github.com/ElephantTweakerdeblaterSAK/Emploro-ultimate
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
 cls
 goto begin
  
 :op2 
 start "" https://emploro.wixsite.com/emploro
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
 cls 
 goto begin
  
 :op3
 start "" https://www.roblox.com/groups/10037011/The-elephant-developer-squad#!/about
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
 cls
 goto begin
  
  
 :op4 
 start "" https://www.fiverr.com/babyshemonpuckp?source=gig_page
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
 cls 
 goto begin
  
+ 
+ 
+ 
+ 
+ 
+:op5
+echo 1) Super Light theme /light theme
+echo 2) yellow lime (default)
+echo 3) salmon pink theme
+echo 4) mcdonalds/dragon theme
+echo 5) Dark theme 
+echo 6) go back to the main menu
+ 
+set /p op=Type option:
+if "%op%"=="1" goto op1
+if "%op%"=="2" goto op2
+if "%op%"=="3" goto op3
+if "%op%"=="4" goto op4
+if "%op%"=="5" goto op5
+if "%op%" =="6" goto op6
+ 
+ 
+:op1 
+color F7
+pause
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
+cls
+goto begin
+ 
+ 
+:op2 
+color 6
+pause
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
+cls
+goto begin
+ 
+ 
+:op3
+color C7
+pause
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
+cls
+goto begin
+ 
+ 
+:op4
+color 46
+pause
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
+cls
+goto begin
+ 
+ 
+ 
+:op5
+color 0B
+pause
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
+cls
+goto begin 
+ 
+ 
+ 
+:op6
+@echo off
+title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
+cls
+goto begin
  
  
  
