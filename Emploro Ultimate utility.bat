@@ -1,9 +1,8 @@
 @echo off
 title Emploro Ultimate Utility Pre-alpha V0.7 theme update early build 
 color 6
-::Run as Admin
 Reg.exe add HKLM /F >nul 2>&1
-if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b 
+if %errorlevel% neq 0 start "" /wait /I /min powershell -NoProfile -Command start -verb runas "'%~s0'" && exit /b
 cls
 echo welcome to Emploro Ultimate Utility this utility does not shorten the life of your pc you will find amazing tweaks and more (:
 pause
